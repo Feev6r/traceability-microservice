@@ -9,14 +9,16 @@ public class OrderTraceability {
     private Long assignedEmployeeId;
     private Long clientId;
     private Long orderId;
-    private List<OrderTrackingModel> orderTracking;
+    private Long orderDurationInMilliseconds;
+    private List<OrderTrackingModel> orderTrack;
 
-    public OrderTraceability(String id, Long assignedEmployeeId, Long clientId, Long orderId, List<OrderTrackingModel> orderTracking) {
+    public OrderTraceability(String id, Long assignedEmployeeId, Long clientId, Long orderId, Long orderDurationInMilliseconds, List<OrderTrackingModel> orderTrack) {
         this.id = id;
         this.assignedEmployeeId = assignedEmployeeId;
         this.clientId = clientId;
         this.orderId = orderId;
-        this.orderTracking = orderTracking;
+        this.orderDurationInMilliseconds = orderDurationInMilliseconds;
+        this.orderTrack = orderTrack;
     }
 
     public String getId() {
@@ -51,23 +53,31 @@ public class OrderTraceability {
         this.orderId = orderId;
     }
 
-    public List<OrderTrackingModel> getOrderTracking() {
-        return orderTracking;
+    public Long getOrderDurationInMilliseconds() {
+        return orderDurationInMilliseconds;
     }
 
-    public void setOrderTracking(List<OrderTrackingModel> orderTracking) {
-        this.orderTracking = orderTracking;
+    public void setOrderDurationInMilliseconds(Long orderDurationInMilliseconds) {
+        this.orderDurationInMilliseconds = orderDurationInMilliseconds;
+    }
+
+    public List<OrderTrackingModel> getOrderTrack() {
+        return orderTrack;
+    }
+
+    public void setOrderTrack(List<OrderTrackingModel> orderTrack) {
+        this.orderTrack = orderTrack;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         OrderTraceability that = (OrderTraceability) o;
-        return Objects.equals(id, that.id) && Objects.equals(assignedEmployeeId, that.assignedEmployeeId) && Objects.equals(clientId, that.clientId) && Objects.equals(orderId, that.orderId) && Objects.equals(orderTracking, that.orderTracking);
+        return Objects.equals(id, that.id) && Objects.equals(assignedEmployeeId, that.assignedEmployeeId) && Objects.equals(clientId, that.clientId) && Objects.equals(orderId, that.orderId) && Objects.equals(orderTrack, that.orderTrack);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, assignedEmployeeId, clientId, orderId, orderTracking);
+        return Objects.hash(id, assignedEmployeeId, clientId, orderId, orderTrack);
     }
 }

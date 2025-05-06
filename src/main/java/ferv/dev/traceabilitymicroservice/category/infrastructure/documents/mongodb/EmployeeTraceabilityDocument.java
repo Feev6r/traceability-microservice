@@ -7,22 +7,16 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "orders_traceability")
-public class OrderTraceabilityDocument {
+@Document(collection = "employee_traceability")
+public class EmployeeTraceabilityDocument {
 
     @Id
     private String id;
-    private String assignedEmployeeId;
-    private String clientId;
-    private String orderId;
-    private Long orderDurationInMilliseconds;
+    private String employeeId;
+    private Long averageEfficiencyInMilliseconds;
 
-    private List<OrderTracking> orderTrack = new ArrayList<>();
 }

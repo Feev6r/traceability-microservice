@@ -4,9 +4,11 @@ import ferv.dev.traceabilitymicroservice.category.infrastructure.documents.mongo
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
 public interface OrderTraceabilityRepository extends MongoRepository<OrderTraceabilityDocument, String> {
     Optional<OrderTraceabilityDocument> findByOrderId(String orderId);
+    List<OrderTraceabilityDocument> findAllByAssignedEmployeeId(String employeeId);
 }

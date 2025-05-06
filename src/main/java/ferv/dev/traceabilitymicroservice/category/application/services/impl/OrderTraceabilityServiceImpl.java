@@ -10,8 +10,6 @@ import ferv.dev.traceabilitymicroservice.category.domain.ports.in.OrderTraceabil
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
 @RequiredArgsConstructor
 public class OrderTraceabilityServiceImpl implements OrderTraceabilityService {
@@ -36,7 +34,7 @@ public class OrderTraceabilityServiceImpl implements OrderTraceabilityService {
     }
 
     @Override
-    public List<OrderTraceResponse> listOrderTrace(Long orderId) {
-        return orderTraceResponseMapper.toOrderTraceResponseList(orderTraceabilityPort.listOrderTrace(orderId));
+    public OrderTraceResponse getOrderTrace(Long orderId) {
+        return orderTraceResponseMapper.toOrderTraceResponse(orderTraceabilityPort.getOrderTrace(orderId));
     }
 }

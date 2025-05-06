@@ -34,6 +34,7 @@ public class SecurityConfig {
                                 .requestMatchers(ApiPaths.ORDER_TRACE + ApiPaths.EMPLOYEE).hasRole(Role.EMPLOYEE.name())
                                 .requestMatchers(ApiPaths.ORDER_TRACE + ApiPaths.UPDATE).hasAnyRole(Role.CLIENT.name(), Role.EMPLOYEE.name())
                                 .requestMatchers(ApiPaths.ORDER_TRACE + ApiPaths.ID).hasRole(Role.CLIENT.name())
+                                .requestMatchers(ApiPaths.EMPLOYEE_TRACE).hasRole(Role.OWNER.name())
                                 .anyRequest().authenticated()
                 )
                 .addFilterBefore(tokenAuthenticationFilter, UsernamePasswordAuthenticationFilter.class

@@ -1,11 +1,10 @@
 package ferv.dev.traceabilitymicroservice.category.application.dto.response;
 
-import ferv.dev.traceabilitymicroservice.category.domain.models.enums.OrderStates;
-
-import java.time.Instant;
+import java.util.List;
 
 public record OrderTraceResponse(
-        Instant timeStamp,
-        OrderStates state
+        Long assignedEmployeeId,
+        List<OrderTrackResponse> orderTrack,
+        Long orderDurationInMilliseconds
 ) {
 }

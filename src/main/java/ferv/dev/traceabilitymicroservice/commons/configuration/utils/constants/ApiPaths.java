@@ -6,6 +6,7 @@ public class ApiPaths {
     }
 
     public static final String ORDER_TRACE = "/order-trace";
+    public static final String EMPLOYEE_TRACE = "/employee-trace";
     public static final String CREATE = "/create";
     public static final String UPDATE = "/update";
     public static final String EMPLOYEE = "/employee";

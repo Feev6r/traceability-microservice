@@ -12,7 +12,7 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface OrderTraceabilityDtoMapper {
 
-    @Mapping(target = "orderTracking", expression = "java(toTrackingModel(request.state()))")
+    @Mapping(target = "orderTrack", expression = "java(toTrackingModel(request.state()))")
     OrderTraceability toModel(OrderTraceabilityRequest request);
 
 

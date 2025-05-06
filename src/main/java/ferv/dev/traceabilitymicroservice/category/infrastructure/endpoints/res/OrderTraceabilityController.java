@@ -13,8 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping(ApiPaths.ORDER_TRACE)
 @RequiredArgsConstructor
@@ -42,7 +40,7 @@ public class OrderTraceabilityController {
     }
 
     @GetMapping(ApiPaths.ID)
-    public ResponseEntity<List<OrderTraceResponse>> listOrderTrace(@PathVariable Long id) {
-        return ResponseEntity.ok(orderTraceabilityService.listOrderTrace(id));
+    public ResponseEntity<OrderTraceResponse> getOrderTrace(@PathVariable Long id) {
+        return ResponseEntity.ok(orderTraceabilityService.getOrderTrace(id));
     }
 }

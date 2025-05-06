@@ -8,5 +8,5 @@ public interface OrderTraceabilityPort {
     void createOrderTrace(OrderTraceability orderTraceability);
     void orderUpdateTrace(Long orderId, OrderStates state);
     void updateOrderTraceByAssigningEmployee(Long employeeId, Long orderId, OrderStates state);
-    OrderTraceability listOrderTrace(Long orderId);
+    OrderTraceability getOrderTrace(Long orderId);
 }
